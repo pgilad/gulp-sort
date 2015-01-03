@@ -1,5 +1,7 @@
-# gulp-sort
+# [gulp](https://github.com/wearefractal/gulp)-sort
 > Sort files in stream by path or any custom sort comparator
+
+[![Build Status](http://img.shields.io/travis/pgilad/gulp-sort/master.svg?style=flat)](https://travis-ci.org/pgilad/gulp-sort)
 
 ## Install
 
