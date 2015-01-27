@@ -5,11 +5,19 @@ function defaultComparator(a, b) {
 }
 
 module.exports = function gulpSort(params) {
-    params = params || {};
-    // sort ascending by default
-    var asc = typeof params.asc !== 'undefined' ? asc : true;
-    var comparator = params.comparator || defaultComparator;
+    var asc = true;
+    var comparator;
     var files = [];
+
+    if (typeof params === 'function') {
+        // params is the sort comparator
+        comparator = params;
+        params = {};
+    } else {
+        params = params || {};
+        asc = typeof params.asc !== 'undefined' ? params.asc : asc;
+        comparator = params.comparator || defaultComparator;
+    }
 
     return through.obj(function (file, enc, cb) {
         files.push(file);

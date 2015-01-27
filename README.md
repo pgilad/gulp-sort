@@ -17,6 +17,11 @@ gulp.src('./src/js/**/*.js')
     .pipe(sort())
     .pipe(gulp.dest('./build/js'));
 
+// pass in a custom comparator function
+gulp.src('./src/js/**/*.js')
+    .pipe(sort(customComparator))
+    .pipe(gulp.dest('./build/js'));
+
 // sort descending
 gulp.src('./src/js/**/*.js')
     .pipe(sort({
@@ -41,6 +46,8 @@ gulp.src('./src/js/**/*.js')
 ```
 
 ## Options
+
+`gulp-sort` takes in an optional comparator [see comparator](#comparator) function, or dictionary with following params:
 
 ### asc
 
