@@ -2,7 +2,7 @@
   "name": "gulp-sort",
   "description": "Sort files in stream by path or any custom sort comparator",
   "repository": "pgilad/gulp-sort",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "author": {
     "name": "Gilad Peleg",
