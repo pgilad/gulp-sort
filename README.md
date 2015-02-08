@@ -47,7 +47,7 @@ gulp.src('./src/js/**/*.js')
 
 ## Options
 
-`gulp-sort` takes in an optional comparator [see comparator](#comparator) function, or dictionary with following params:
+`gulp-sort` takes in an optional [comparator](#comparator) function, or dictionary with following params:
 
 ### asc
 
