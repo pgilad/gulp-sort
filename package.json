@@ -25,10 +25,10 @@
     "comparator"
   ],
   "dependencies": {
-    "through2": "^0.6.3"
+    "through2": "^0.6.5"
   },
   "devDependencies": {
-    "gulp-util": "^3.0.1",
+    "gulp-util": "^3.0.4",
     "mocha": "^2.1.0"
   }
 }
