@@ -25,7 +25,7 @@ gulp.src('./src/js/**/*.js')
 // sort descending
 gulp.src('./src/js/**/*.js')
     .pipe(sort({
-        asc: false
+         asc: false
     }))
     .pipe(gulp.dest('./build/js'));
 
@@ -43,6 +43,16 @@ gulp.src('./src/js/**/*.js')
         }
     }))
     .pipe(gulp.dest('./build/js'));
+
+// sort with a custom sort function
+var stable = require('stable');
+gulp.src('./src/js/**/*.js')
+    .pipe(sort({
+        customSortFn: function(files, comparator) {
+            return stable(files, comparator);
+        }
+    }))
+    .pipe(gulp.dest('./build/js'));
 ```
 
 ## Options
@@ -56,6 +66,19 @@ Sort ascending. Defaults to true. Specify false to sort descending.
 ### comparator
 
 Comparator function to use. `comparator(file1, file2)`. Defaults to `localeCompare` of file paths.
+
+### customSortFn
+
+Use `customSortFn` in order to control the sorting yourself (useful for stable sorts).
+
+`customSortFn` signature is as follows:
+
+`customSortFn(<files>, <comparator>)`
+
+- `files` being the vinyl file objects that were passed in
+- `comparator` is the default comparator used, or a custom one that was passed as param
+
+This function is expected to return back the sorted list of files.
 
 ## License
 
