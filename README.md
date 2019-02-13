@@ -82,4 +82,4 @@ This function is expected to return back the sorted list of files.
 
 ## License
 
-MIT ©[Gilad Peleg](http://giladpeleg.com)
+MIT © [Gilad Peleg](https://www.giladpeleg.com)
